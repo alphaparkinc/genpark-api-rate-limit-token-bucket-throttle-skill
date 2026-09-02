@@ -1,0 +1,42 @@
+{
+  "name": "genpark-api-rate-limit-token-bucket-throttle-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - High-throughput API rate limit token bucket throttle evaluating burst quotas and standard HTTP rate limit response headers.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "api-gateway",
+  "tags": [
+    "rate-limiter",
+    "token-bucket",
+    "traffic-shaping",
+    "api-throttling",
+    "ddos-mitigation"
+  ],
+  "inputs": {
+    "client_ip_or_token": {
+      "type": "string"
+    },
+    "bucket_capacity": {
+      "type": "integer"
+    },
+    "refill_rate_per_second": {
+      "type": "integer"
+    }
+  },
+  "outputs": {
+    "throttle_decision_id": {
+      "type": "string"
+    },
+    "token_acquired": {
+      "type": "boolean"
+    },
+    "remaining_tokens_count": {
+      "type": "integer"
+    },
+    "rate_limit_telemetry_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
